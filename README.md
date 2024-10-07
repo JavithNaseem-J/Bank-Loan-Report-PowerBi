@@ -1,15 +1,14 @@
 # Bank Loan Data Analysis Project
+## Project Overview
+This project focuses on analyzing bank loan data to identify trends, assess key performance indicators (KPIs), and provide actionable insights. The analysis includes monthly trends, regional loan activities, loan term distribution, borrower employment length, loan purposes, and home ownership status. The key goals are to evaluate loan performance metrics and identify factors influencing loan applications and repayments.
 
 ## 1. ASK
-
-### Key Questions:
-
-1. **Monthly Trends by Issue Date**: To identify seasonality and long-term trends in lending activities.
-2. **Regional Analysis by State**: To identify regions with significant lending activity and assess regional disparities.
-3. **Loan Term Analysis**: To understand the distribution of loans across various term lengths.
-4. **Employment Length Analysis**: How lending metrics are distributed among borrowers with different employment lengths, helping assess the impact of employment history on loan applications.
-5. **Loan Purpose Breakdown**: A visual breakdown of loan metrics based on the stated purposes of loans, aiding in understanding the primary reasons borrowers seek financing.
-6. **Home Ownership Analysis**: To assess how home ownership impacts loan applications and disbursements.
+1. To identify seasonality and long-term trends in lending activities.
+2. To identify regions with significant lending activity and assess regional disparities.
+3. To understand the distribution of loans across various term lengths.
+4. How lending metrics are distributed among borrowers with different employment lengths, helping assess the impact of employment history on loan applications.
+5. A visual breakdown of loan metrics based on the stated purposes of loans, aiding in understanding the primary reasons borrowers seek financing.
+6. To assess how home ownership impacts loan applications and disbursements.
 
  **Good Loan v Bad Loan KPIs:**
 
@@ -62,8 +61,6 @@
 - Remove duplicate loan applications.
 - Handle missing data.
 - Ensure consistent date formats.
-
-### Transformation:
 - Convert string-based dates to datetime for month-to-date and quarter-to-date calculations.
 
 ---
@@ -103,10 +100,10 @@
 - **Loan DTI MTD**: `CALCULATE(TOTALMTD([Average DTI Ratio], [Date Table].[Date]))`
 - **Loan DTI MoM**: `([Loan DTI MTD] / [Loan DTI PMTD]) / [Loan DTI PMTD]`
 
-## 3. SHARE
+## 5. SHARE
 
+https://github.com/user-attachments/assets/eb4a5d1e-2cc4-4fc6-b4ff-1fd20312e3bf
 
-https://github.com/user-attachments/assets/aa0dafe1-19ce-4833-8435-14c09167887d
 
 
 
