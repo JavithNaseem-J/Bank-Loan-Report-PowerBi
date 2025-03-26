@@ -1,109 +1,138 @@
-# Bank Loan Data Analysis Project
-## Project Overview
-This project focuses on analyzing bank loan data to identify trends, assess key performance indicators (KPIs), and provide actionable insights. The analysis includes monthly trends, regional loan activities, loan term distribution, borrower employment length, loan purposes, and home ownership status. The key goals are to evaluate loan performance metrics and identify factors influencing loan applications and repayments.
-
-## 1. ASK
-1. To identify seasonality and long-term trends in lending activities.
-2. To identify regions with significant lending activity and assess regional disparities.
-3. To understand the distribution of loans across various term lengths.
-4. How lending metrics are distributed among borrowers with different employment lengths, helping assess the impact of employment history on loan applications.
-5. A visual breakdown of loan metrics based on the stated purposes of loans, aiding in understanding the primary reasons borrowers seek financing.
-6. To assess how home ownership impacts loan applications and disbursements.
-
- **Good Loan v Bad Loan KPIs:**
-
-- Good Loan:
-  1. Good Loan Application Percentage
-  2. Good Loan Applications
-
-- Bad Loan:
-  1. Bad Loan Application Percentage
-  2. Bad Loan Applications
+Below is the revised GitHub README documentation for your Power BI project, with the "Dashboard Features" section removed and replaced with a "Questions Answered" section. This section highlights key questions that the Power BI report can help answer based on the dataset and the visuals provided in the images.
 
 ---
 
-## 2. PREPARE
-### Dataset:
-- **id**: Unique identifier for each record.
-- **address_state**: State where the loan applicant resides.
-- **application_type**: Type of loan application (e.g., Individual).
-- **emp_length**: Length of employment of the applicant.
-- **emp_title**: Job title of the applicant.
-- **grade**: Loan grade (related to creditworthiness).
-- **home_ownership**: Applicant's home ownership status (e.g., RENT, MORTGAGE, OWN).
+# Bank Loan Report - Power BI Project
+
+## 📊 Project Overview
+
+The **Bank Loan Report** is a Power BI project designed to analyze and visualize loan application data for a financial institution. The dashboard provides insights into loan applications, funding amounts, loan statuses, interest rates, debt-to-income (DTI) ratios, and more. It is divided into three main pages: **Summary**, **Overview**, and **Details**, each offering a different level of granularity for stakeholders to monitor loan performance and trends.
+
+This project aims to assist bank managers, financial analysts, and decision-makers in understanding loan portfolios, identifying trends, and making data-driven decisions.
+
+---
+
+## 📊 Dataset Description
+
+The dataset used in this project contains detailed information about loan applications. It includes the following key columns:
+
+- **id**: Unique identifier for each loan application.
+- **address_state**: The state where the applicant resides (e.g., CA, TX, NY).
+- **application_type**: Type of application (e.g., Individual).
+- **emp_length**: Employment length of the applicant (e.g., < 1 year, 10+ years).
+- **emp_title**: Job title of the applicant (e.g., Ryder, American Airlines).
+- **grade**: Loan grade assigned (e.g., A, B, C).
+- **home_ownership**: Ownership status (e.g., RENT, MORTGAGE, OWN).
 - **issue_date**: Date the loan was issued.
-- **last_credit_pull_date**: Date when the applicant's credit was last checked.
-- **last_payment_date**: Date of the last payment made.
-- **loan_status**: Status of the loan (e.g., Fully Paid, Charged Off).
-- **next_payment_date**: Date when the next payment is due.
-- **member_id**: Member identifier of the loan applicant.
-- **purpose**: Purpose of the loan (e.g., car, credit_card, etc.).
-- **sub_grade**: Sub-category of the loan grade.
-- **term**: Loan term (e.g., 36 months).
-- **verification_status**: Whether the income has been verified or not.
+- **last_credit_pull_date**: Date of the last credit pull.
+- **last_payment_date**: Date of the last payment.
+- **loan_status**: Status of the loan (e.g., Charged Off, Fully Paid, Current).
+- **next_payment_date**: Date of the next scheduled payment.
+- **member_id**: Unique identifier for the member.
+- **purpose**: Purpose of the loan (e.g., car, wedding).
+- **sub_grade**: Sub-grade of the loan (e.g., A1, B2).
+- **term**: Loan term (e.g., 36 months, 60 months).
+- **verification_status**: Verification status (e.g., Source Verified, Not Verified).
 - **annual_income**: Annual income of the applicant.
-- **dti**: Debt-to-Income ratio.
-- **installment**: Amount to be paid in each installment.
+- **dti**: Debt-to-income ratio.
+- **installment**: Monthly installment amount.
 - **int_rate**: Interest rate of the loan.
-- **loan_amount**: Amount of the loan.
-- **total_acc**: Total number of credit accounts.
-- **total_payment**: Total amount paid towards the loan so far.
+- **loan_amount**: Loan amount requested.
+- **total_acc**: Total number of accounts.
+- **total_payment**: Total payment made.
+
+The dataset includes 38,576 loan applications with a total funded amount of $436M and a total amount received of $473M.
 
 ---
 
-## 3. PROCESS
-- **Power BI**
-- **DAX**
-- **Power Query**
-- **SQL**
+## ❓ Questions
 
-### Data Cleaning:
-- Remove duplicate loan applications.
-- Handle missing data.
-- Ensure consistent date formats.
-- Convert string-based dates to datetime for month-to-date and quarter-to-date calculations.
+This Power BI report helps answer the following key questions for stakeholders:
+
+1. **What is the overall performance of the loan portfolio?**  
+
+2. **How many loans are classified as good vs. bad?**  
+
+3. **What is the distribution of loan statuses?**  
+
+4. **How do interest rates and DTI ratios vary by loan status?**  
+
+5. **What are the trends in loan applications over time?**  
+
+6. **Which states have the highest number of loan applications?**  
+
+7. **What are the most common purposes for loans?**  
+
+8. **How do loan terms (e.g., 36 months vs. 60 months) compare?**  
+
+9. **What is the distribution of loan applications by employment length?**  
+
+10. **How does home ownership impact loan applications?**  
+
+11. **What are the details of individual loan applications?**  
+
 
 ---
 
-## 4. ANALYZE
-#### KPIs:
-- **Total Loan Applications** (with MTD and MoM)
-- **Total Funded Amount** (with MTD and MoM)
-- **Total Amount Received** (with MTD and MoM)
-- **Average Interest Rate** (MTD and MoM)
-- **Average Debt-to-Income Ratio** (MTD and MoM)
+## 🛠️ Prerequisites
 
-#### Key Metrics:
-- **Total Loan Applications**: Number of loan applications received.
-- **Total Funded Amount**: Sum of the loan amounts that have been approved and disbursed.
-- **Total Amount Received**: Total payments received on the loans.
-- **Average Interest Rate**: Mean interest rate charged on the loans.
-- **Average DTI Ratio**: Mean debt-to-income ratio for loan applicants.
-- **Loan MoM Growth**: Month-over-month growth in loan applications and funded amounts.
+To run this Power BI project, you need the following:
+- **Power BI Desktop**: Download and install the latest version of Power BI Desktop from [Microsoft's official website](https://powerbi.microsoft.com/desktop/).
+- **Dataset**: The dataset file (e.g., `loan_data.csv`) containing the loan application data.
 
-### 4.3. Calculated Fields/Parameters:
+---
 
-- **Total Loan Applications**: `COUNT([id])`
-- **Total Funded Amount**: `SUM([loan_amount])`
-- **Total Amount Received**: `SUM([total_payment])`
-- **Average Interest Rate**: `CALCULATE(AVERAGE([int_rate]) * 100)`
-- **Average DTI Ratio**: `CALCULATE(AVERAGE([dti]) * 100)`
+## ⚙️ Installation and Setup
 
-- **Loan MoM**: `([Loan MTD] - [Loan PMTD]) / [Loan PMTD]`
-- **Loan MTD**: `CALCULATE(TOTALMTD([Total Loan Applications], [Date Table].[Date]))`
-- **Loan Fund MoM**: `([Loan Fund MTD] - [Loan Fund PMTD]) / [Loan Fund PMTD]`
-- **Loan Fund MTD**: `CALCULATE(TOTALMTD([Total Funded Amount], [Date Table].[Date]))`
-- **Loan Amt MoM**: `([Loan Amt MTD] - [Loan Amt PMTD]) / [Loan Amt PMTD]`
-- **Loan Amt MTD**: `CALCULATE(TOTALMTD([Total Amount Received], [Date Table].[Date]))`
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/bank-loan-report.git
+   cd bank-loan-report
+   ```
 
-- **Loan Int MTD**: `CALCULATE(TOTALMTD([Average Interest Rate], [Date Table].[Date]))`
-- **Loan DTI MTD**: `CALCULATE(TOTALMTD([Average DTI Ratio], [Date Table].[Date]))`
-- **Loan DTI MoM**: `([Loan DTI MTD] / [Loan DTI PMTD]) / [Loan DTI PMTD]`
+2. **Download Power BI Desktop**:
+   - If you don't have Power BI Desktop installed, download it from [here](https://powerbi.microsoft.com/desktop/) and install it on your system.
 
-## 5. SHARE
+3. **Load the Dataset**:
+   - Place the dataset file (`loan_data.csv`) in the project directory.
+   - Open Power BI Desktop.
+   - Click on **Get Data** > **Text/CSV** and select the `loan_data.csv` file.
+   - Load the data into Power BI.
 
-https://github.com/user-attachments/assets/eb4a5d1e-2cc4-4fc6-b4ff-1fd20312e3bf
+4. **Open the Power BI File**:
+   - Open the `Bank_Loan_Report.pbix` file in Power BI Desktop.
+   - If the dataset is already connected, the dashboard will load automatically. Otherwise, reconnect the dataset as described above.
+
+5. **Explore the Dashboard**:
+   - Navigate through the **Summary**, **Overview**, and **Details** pages using the tabs on the left.
+
+---
+
+## 🚀 Usage
+
+- **Filter Data**: Use the filters on the left sidebar (State, Grade, Purpose) to drill down into specific subsets of the data.
+- **Interact with Visuals**: Click on charts, maps, or tables to interact with the data and see cross-filtered results.
+- **Analyze Trends**: Use the visuals to identify trends in loan applications by month, state, or purpose.
+- **Detailed Insights**: Use the detailed table to view individual loan records for in-depth analysis.
+
+---
+
+## 📸 Screenshots
+
+### Summary Page
+![Screenshot 2025-03-27 014155](https://github.com/user-attachments/assets/8339f108-3f35-48ad-a6d5-c515082af9d9)
+
+### Overview Page
+![Screenshot 2025-03-27 014230](https://github.com/user-attachments/assets/601d73b5-ef41-42fd-868b-376d2496ac6c)
 
 
+### Details Page
+![Screenshot 2025-03-27 014255](https://github.com/user-attachments/assets/291ce60b-7a5b-49de-80ff-a3a97d930496)
 
+---
 
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
