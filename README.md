@@ -1,7 +1,3 @@
-Below is the revised GitHub README documentation for your Power BI project, with the "Dashboard Features" section removed and replaced with a "Questions Answered" section. This section highlights key questions that the Power BI report can help answer based on the dataset and the visuals provided in the images.
-
----
-
 # Bank Loan Report - Power BI Project
 
 ## 📊 Project Overview
@@ -40,8 +36,6 @@ The dataset used in this project contains detailed information about loan applic
 - **loan_amount**: Loan amount requested.
 - **total_acc**: Total number of accounts.
 - **total_payment**: Total payment made.
-
-The dataset includes 38,576 loan applications with a total funded amount of $436M and a total amount received of $473M.
 
 ---
 
